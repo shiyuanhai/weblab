@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery actual test</title>
+	<!-- common js libs -->
+	<script src="../../../bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery.actual.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function(){
+			var outerDiv = document.getElementById("outerDiv");
+			outerDiv.style.display = "none";
+			console.log($("#innerDiv").height());
+			console.log($("#innerDiv").actual('height'));
+		});		
+	</script>
+</head>
+<body>
+	<div id="outerDiv">
+		<div id="innerDiv">
+			div
+		</div>
+	</div>
+</body>
+</html>

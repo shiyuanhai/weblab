@@ -1,0 +1,28 @@
+{
+  "name": "weblab",
+  "version": "0.0.0",
+  "homepage": "https://github.com/shiyuanhai/weblab",
+  "authors": [
+    "Yuanhai <Shi>"
+  ],
+  "description": "A lab for web tech.",
+  "main": "weblab.html",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "HTML",
+    "CSS",
+    "Javascript",
+    "Angularjs",
+    "KendoUI"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

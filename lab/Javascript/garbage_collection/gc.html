@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Garbage Collection</title>
+
+	<!-- common js libs -->
+	<script src="../../../bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+
+
+	<script type="text/javascript">
+		function globalFunc(){
+				console.log("globalFuncs");
+			}
+		globalVarWin = "globalVarWin";
+		var gloablVar = "gloablVar";
+
+		jQuery(document).ready(function($) {
+			$("#deleteFunc").click(function(){
+				//delete 
+				delete globalFunc();
+
+				//not deleted
+				globalFunc();
+
+				//set to undefined, then can't access
+				window.globalFunc=undefined;
+				//globalFunc();
+			});
+
+			$("#deleteVar").click(function(){
+				//delete 
+				delete gloablVar;
+				//global variable defined with var is NOT deleted. 
+				//To delete, set to null/undefined to remove reference
+				console.log("gloablVar:"+gloablVar);
+			});
+
+			$("#deleteVarWin").click(function(){
+				//delete 
+				delete globalVarWin;
+
+				//global variable defined without var is deleted
+				console.log("globalVarWin:"+globalVarWin);
+
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>
+		<input type="button" name="DeleteFunc" value="Delete Global Function" id="deleteFunc">
+		<input type="button" name="DeleteVar" value="Delete Var" id="deleteVar">
+		<input type="button" name="DeleteVarWin" value="Delete Var of window" id="deleteVarWin">
+	</p>
+</body>
+</html>

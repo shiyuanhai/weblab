@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object creation test</title>
+	<!-- common js libs -->
+	<script src="../../../bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+	<script>
+		var nulljs = {};
+		nulljs.Person = function(){
+			this.name = '';
+			console.log('constructor is excuted.');
+		}
+		var p1 = new nulljs.Person();
+		p1.name = 'robert';
+		console.log(p1.name);
+		nulljs.Person.prototype.sayHi = function(){
+			console.log('Hi, my name is '+this.name);
+		}
+		p1.sayHi();
+		var p2 = new nulljs.Person();
+		p2.name = 'alice';
+		p2.sayHi();
+		var p3 = Object.create(nulljs.Person.prototype);//will not execute constructor
+		p3.name = 'bob';
+		p3.sayHi();
+		var p4 = Object.create(nulljs.Person.prototype,
+								{
+									age: {
+										writable : true,
+										configurable : true,
+										value : 0
+									}
+								});
+		p4.name = 'bill';
+		p4.age = 20;
+		console.log(p4.age);
+	</script>
+</head>
+<body>
+</body>
+</html>

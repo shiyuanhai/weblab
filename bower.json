@@ -10,6 +10,9 @@
   "moduleType": [
     "amd"
   ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  },
   "keywords": [
     "HTML",
     "CSS",
